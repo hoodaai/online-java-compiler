@@ -1,0 +1,18 @@
+<configuration>
+
+    <appender name="RSYSLOG" class="ch.qos.logback.classic.net.SyslogAppender">
+        <syslogHost>syslog_remote</syslogHost>
+        <facility>USER</facility>
+        <suffixPattern>%thread: %-5level %logger{36} - %msg%n</suffixPattern>
+    </appender>
+
+    <logger name="com.web.rest" level="INFO">
+        <appender-ref ref="RSYSLOG" />
+    </logger>
+
+    <logger name="com.service" level="INFO">
+        <appender-ref ref="RSYSLOG" />
+    </logger>
+
+
+</configuration>

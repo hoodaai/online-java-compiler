@@ -1,0 +1,65 @@
+# ===================================================================
+# Spring Boot configuration.
+#
+# This configuration will be overriden by the Spring profile you use,
+# for example application-dev.yml if you use the "dev" profile.
+# ===================================================================
+
+# ===================================================================
+# Standard Spring Boot properties.
+# Full reference is available at:
+# http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+# ===================================================================
+
+spring:
+    jpa:
+        open-in-view: false
+        hibernate:
+            ddl-auto: none
+            show-sql: false
+            naming-strategy: org.springframework.boot.orm.jpa.hibernate.SpringNamingStrategy
+    messages:
+        basename: classpath:/i18n/messages
+    mvc:
+        favicon:
+            enabled: false
+    thymeleaf:
+        mode: XHTML
+logging:
+  level:
+    org.springframework.web: OFF
+    com.web.rest: DEBUG
+    com.service: DEBUG
+    org.hibernate: OFF
+#
+#endpoints:
+#  enabled: false
+#  actuator:
+#    enabled: false
+
+security:
+    basic:
+        enabled: false
+
+# ===================================================================
+# JHipster specific properties
+# ===================================================================
+
+
+jhipster:
+    security:
+        authentication:
+            oauth:
+                clientid: unicornapp
+                secret: mySecretOAuthSecret
+                # Token is valid 30 minutes
+                tokenValidityInSeconds: 1800
+        rememberme:
+            # security key (this key should be unique for your application, and kept secret)
+            key: 9f201120b36e60e533b6f7f83e9f2b9abd1ba8bb
+
+    outputdirectory: /tmp
+
+
+
+#spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect

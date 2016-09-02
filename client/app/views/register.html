@@ -1,0 +1,42 @@
+
+<div style="max-width:25em; margin: auto;">
+  <div class="jumbotron" style="background-color:#f8f8f8">
+    <h3 class="heading">Register</h3>
+
+  <form style="padding:10px" class="form" name="form"  ng-submit="register(form)" novalidate>
+  <div class="alert-danger" ng-show="errors">
+    {{errors}}
+  </div>
+   <div class="form-group">
+      <input type="text" class="form-control" name="loginid" placeholder="Login id"
+                         ng-model="user.loginid" required="">
+      <div ng-show="form.$submitted || form.loginid.$touched">
+          <div ng-show="form.loginid.$error.required" class="alert-danger">Enter login id</div>
+      </div>
+  </div>
+
+   <div class="form-group">
+      <input type="email" class="form-control" name="email" placeholder="Email"
+                         ng-model="user.email" required="">
+      <div ng-show="form.$submitted || form.email.$touched">
+          <div ng-show="form.email.$error.required" class="alert-danger">Enter email </div>
+      </div>
+  </div>
+
+   <div class="form-group">
+      <input type="password" class="form-control" name="password" placeholder="Password"
+                         ng-model="user.password" required="">
+      <div ng-show="form.$submitted || form.password.$touched">
+          <div ng-show="form.password.$error.required" class="alert-danger">Enter password</div>
+      </div>
+  </div>
+
+
+    <button type="submit" class="btn btn-login">Register</button>
+    <p>
+        <a href="#/login" class="heading">Sign In</a>
+    </p>
+  </form>
+
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Spring Security Example </title>
+    <meta http-equiv="Content-Type" content="application/json; charset=UTF-8" />
+</head>
+<body>
+
+<form th:action="@{/api/register}" method="post"   enctype="application/json">
+    <div><label> Login : <input type="text" name="login"/> </label></div>
+    <div><label> Password: <input type="password" name="password"/> </label></div>
+    <div><label> email: <input type="email" name="email"/> </label></div>
+    <div><label> <input style="display: none" value="en" type="password" name="langKey"/> </label></div>
+    <div><input type="submit" value="Register"/></div>
+</form>
+</body>
+</html>
